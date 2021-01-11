@@ -1,5 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
+import All from '../views/All.vue';
+import Quote from '../views/Quote.vue';
 
 const routes = [
 	{
@@ -7,10 +9,20 @@ const routes = [
 		name: 'Home',
 		component: Home,
 	},
+	{
+		path: '/all',
+		name: 'All Quotes',
+		component: All,
+	},
+	{
+		path: '/quote/:id',
+		name: 'Single Quote',
+		component: Quote,
+	},
 ];
 
 const router = createRouter({
-	history: createWebHashHistory(),
+	history: createWebHistory(process.env.BASE_URL),
 	routes,
 });
 
